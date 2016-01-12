@@ -1,21 +1,19 @@
 # Marauder
 3-Tier architecture with ASP.Net MVC using   
-Entity Framework, Generic Repository pattern and Unit of Work  
+Entity Framework, Repository pattern and Unit of Work  
 AutoMapper, Autofac, Nlog, PagedList.
 
 ===================
 
-PL   - UI,bussiness flow  
-BLL  - business logic  
-DAL  - DB access  
-
-(Help - Common library)
+PL   - Presentation layer  
+BLL  - Business logic layer    
+DAL  - Data access layer  
 
 Project structure
 -------------------
 PL   - UI,bussiness flow  
 BLL  - business logic  
-DAL  - DB access  
+DAL  - Data access  
 Help - Common library  
 Tests - Unit test
 
