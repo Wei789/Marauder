@@ -1,7 +1,4 @@
-﻿using System;
-using System.Collections.Generic;
-using System.Linq;
-using System.Web;
+﻿using Marauder.BLL;
 using System.Web.Mvc;
 using System.Web.Routing;
 
@@ -13,6 +10,9 @@ namespace Marauder.Web
         {
             AreaRegistration.RegisterAllAreas();
             RouteConfig.RegisterRoutes(RouteTable.Routes);
+
+            AutoMapperConfig.Configure();
+            AutofacConfig.Configure(typeof(MvcApplication).Assembly);
         }
     }
 }
