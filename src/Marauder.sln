@@ -1,0 +1,46 @@
+﻿
+Microsoft Visual Studio Solution File, Format Version 12.00
+# Visual Studio 2013
+VisualStudioVersion = 12.0.40629.0
+MinimumVisualStudioVersion = 10.0.40219.1
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "Marauder.Web", "Marauder.Web\Marauder.Web.csproj", "{647CEA32-68E7-4DDF-9C08-7BCB82A5322D}"
+EndProject
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "Marauder.Web.Tests", "Marauder.Web.Tests\Marauder.Web.Tests.csproj", "{28AB6F56-2F3F-49FA-8961-7850DB1CF5D2}"
+EndProject
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "Marauder.BLL", "Marauder.BLL\Marauder.BLL.csproj", "{49D2F22F-7056-40B1-AF14-E05CC2ABB92F}"
+EndProject
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "Marauder.DAL", "Marauder.DAL\Marauder.DAL.csproj", "{9ACA7F3E-8315-4242-9162-2DA0CBEE482F}"
+EndProject
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "Marauder.Help", "Marauder.Help\Marauder.Help.csproj", "{D84FED34-21FF-4B66-A839-391C08447FAA}"
+EndProject
+Global
+	GlobalSection(SolutionConfigurationPlatforms) = preSolution
+		Debug|Any CPU = Debug|Any CPU
+		Release|Any CPU = Release|Any CPU
+	EndGlobalSection
+	GlobalSection(ProjectConfigurationPlatforms) = postSolution
+		{647CEA32-68E7-4DDF-9C08-7BCB82A5322D}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{647CEA32-68E7-4DDF-9C08-7BCB82A5322D}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{647CEA32-68E7-4DDF-9C08-7BCB82A5322D}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{647CEA32-68E7-4DDF-9C08-7BCB82A5322D}.Release|Any CPU.Build.0 = Release|Any CPU
+		{28AB6F56-2F3F-49FA-8961-7850DB1CF5D2}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{28AB6F56-2F3F-49FA-8961-7850DB1CF5D2}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{28AB6F56-2F3F-49FA-8961-7850DB1CF5D2}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{28AB6F56-2F3F-49FA-8961-7850DB1CF5D2}.Release|Any CPU.Build.0 = Release|Any CPU
+		{49D2F22F-7056-40B1-AF14-E05CC2ABB92F}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{49D2F22F-7056-40B1-AF14-E05CC2ABB92F}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{49D2F22F-7056-40B1-AF14-E05CC2ABB92F}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{49D2F22F-7056-40B1-AF14-E05CC2ABB92F}.Release|Any CPU.Build.0 = Release|Any CPU
+		{9ACA7F3E-8315-4242-9162-2DA0CBEE482F}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{9ACA7F3E-8315-4242-9162-2DA0CBEE482F}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{9ACA7F3E-8315-4242-9162-2DA0CBEE482F}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{9ACA7F3E-8315-4242-9162-2DA0CBEE482F}.Release|Any CPU.Build.0 = Release|Any CPU
+		{D84FED34-21FF-4B66-A839-391C08447FAA}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{D84FED34-21FF-4B66-A839-391C08447FAA}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{D84FED34-21FF-4B66-A839-391C08447FAA}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{D84FED34-21FF-4B66-A839-391C08447FAA}.Release|Any CPU.Build.0 = Release|Any CPU
+	EndGlobalSection
+	GlobalSection(SolutionProperties) = preSolution
+		HideSolutionNode = FALSE
+	EndGlobalSection
+EndGlobal
