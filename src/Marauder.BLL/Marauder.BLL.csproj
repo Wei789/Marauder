@@ -42,6 +42,16 @@
     <Compile Include="Class1.cs" />
     <Compile Include="Properties\AssemblyInfo.cs" />
   </ItemGroup>
+  <ItemGroup>
+    <ProjectReference Include="..\Marauder.DAL\Marauder.DAL.csproj">
+      <Project>{9aca7f3e-8315-4242-9162-2da0cbee482f}</Project>
+      <Name>Marauder.DAL</Name>
+    </ProjectReference>
+    <ProjectReference Include="..\Marauder.Help\Marauder.Help.csproj">
+      <Project>{d84fed34-21ff-4b66-a839-391c08447faa}</Project>
+      <Name>Marauder.Help</Name>
+    </ProjectReference>
+  </ItemGroup>
   <Import Project="$(MSBuildToolsPath)\Microsoft.CSharp.targets" />
   <!-- To modify your build process, add your task inside one of the targets below and uncomment it. 
        Other similar extension points exist, see Microsoft.Common.targets.

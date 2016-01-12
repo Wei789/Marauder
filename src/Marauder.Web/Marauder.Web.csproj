@@ -106,6 +106,16 @@
     <Folder Include="Models\" />
     <Folder Include="Views\Default\" />
   </ItemGroup>
+  <ItemGroup>
+    <ProjectReference Include="..\Marauder.BLL\Marauder.BLL.csproj">
+      <Project>{49d2f22f-7056-40b1-af14-e05cc2abb92f}</Project>
+      <Name>Marauder.BLL</Name>
+    </ProjectReference>
+    <ProjectReference Include="..\Marauder.Help\Marauder.Help.csproj">
+      <Project>{d84fed34-21ff-4b66-a839-391c08447faa}</Project>
+      <Name>Marauder.Help</Name>
+    </ProjectReference>
+  </ItemGroup>
   <PropertyGroup>
     <VisualStudioVersion Condition="'$(VisualStudioVersion)' == ''">10.0</VisualStudioVersion>
     <VSToolsPath Condition="'$(VSToolsPath)' == ''">$(MSBuildExtensionsPath32)\Microsoft\VisualStudio\v$(VisualStudioVersion)</VSToolsPath>
