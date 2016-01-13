@@ -9,6 +9,7 @@ namespace Marauder.BLL
         public static void Configure()
         {
             Mapper.CreateMap<acct_company, CompanyView>();
+            Mapper.CreateMap<CompanyView, acct_company>();
         }
     }
 }

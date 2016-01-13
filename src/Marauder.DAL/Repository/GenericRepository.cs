@@ -99,7 +99,6 @@ namespace Marauder.DAL.Repository
                 {
                     dbSet.Attach(instance);
                 }
-
                 dbSet.Remove(instance);
             }
         }

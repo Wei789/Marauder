@@ -1,9 +1,11 @@
 ﻿using Marauder.BLL.Interface;
 using Marauder.BLL.ViewModels;
+using NLog;
 using PagedList;
 using System;
 using System.Collections.Generic;
 using System.Linq;
+using System.Net;
 using System.Web;
 using System.Web.Mvc;
 
@@ -12,6 +14,8 @@ namespace Marauder.Web.Controllers
     public class CompanyController : BaseController
     {
         private readonly ICompanyService comapnyService;
+
+        private static Logger logger = NLog.LogManager.GetCurrentClassLogger();
         
         public CompanyController(ICompanyService comapnyService)
         {
@@ -30,7 +34,16 @@ namespace Marauder.Web.Controllers
         // GET: Company/Details/5
         public ActionResult Details(int id)
         {
-            return View();
+            if (id == null)
+            {
+                return new HttpStatusCodeResult(HttpStatusCode.BadRequest);
+            }
+            CompanyView acct_company = this.comapnyService.GetByID(id);
+            if (acct_company == null)
+            {
+                return HttpNotFound();
+            }
+            return View(acct_company);
         }
 
         // GET: Company/Create
@@ -40,63 +53,69 @@ namespace Marauder.Web.Controllers
         }
 
         // POST: Company/Create
+        // To protect from overposting attacks, please enable the specific properties you want to bind to, for 
+        // more details see http://go.microsoft.com/fwlink/?LinkId=317598.
         [HttpPost]
-        public ActionResult Create(FormCollection collection)
+        [ValidateAntiForgeryToken]
+        public ActionResult Create([Bind(Include = "acct_company_id,name,code,display_name,contact,title,note,date_created")] CompanyView acct_company)
         {
-            try
+            if (ModelState.IsValid)
             {
-                // TODO: Add insert logic here
-
+                this.comapnyService.Create(acct_company);
+                this.comapnyService.Save();
                 return RedirectToAction("Index");
             }
-            catch
-            {
-                return View();
-            }
+
+            return View(acct_company);
         }
 
         // GET: Company/Edit/5
         public ActionResult Edit(int id)
         {
-            return View();
+            CompanyView acct_company = this.comapnyService.GetByID(id);
+            if (acct_company == null)
+            {
+                return HttpNotFound();
+            }
+            return View(acct_company);
         }
 
         // POST: Company/Edit/5
+        // To protect from overposting attacks, please enable the specific properties you want to bind to, for 
+        // more details see http://go.microsoft.com/fwlink/?LinkId=317598.
         [HttpPost]
-        public ActionResult Edit(int id, FormCollection collection)
+        [ValidateAntiForgeryToken]
+        public ActionResult Edit([Bind(Include = "acct_company_id,name,code,display_name,contact,title,note,date_created")] CompanyView acct_company)
         {
-            try
+            if (ModelState.IsValid)
             {
-                // TODO: Add update logic here
-
+                this.comapnyService.Update(acct_company);
+                this.comapnyService.Save();
                 return RedirectToAction("Index");
             }
-            catch
-            {
-                return View();
-            }
+            return View(acct_company);
         }
 
         // GET: Company/Delete/5
         public ActionResult Delete(int id)
         {
-            return View();
+            CompanyView acct_company = this.comapnyService.GetByID(id);
+            if (acct_company == null)
+            {
+                return HttpNotFound();
+            }
+            return View(acct_company);
         }
 
         // POST: Company/Delete/5
-        [HttpPost]
-        public ActionResult Delete(int id, FormCollection collection)
+        [HttpPost, ActionName("Delete")]
+        [ValidateAntiForgeryToken]
+        public ActionResult DeleteConfirmed(int id)
         {
-            try
-            {
-                // TODO: Add delete logic here
-
-                return RedirectToAction("Index");
-            }
-            catch
-            {
-                return View();
-            }
+            //CompanyView acct_company = this.comapnyService.GetByID(id);
+            this.comapnyService.Delete(id);
+            this.comapnyService.Save();
+            return RedirectToAction("Index");
         }
     }
 }

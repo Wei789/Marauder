@@ -11,11 +11,11 @@ namespace Marauder.BLL.Interface
 {
     public interface ICompanyService
     {
-        void Create(acct_company acct_comapny);
+        void Create(CompanyView acct_comapny);
         IQueryable<CompanyView> GetAll();
-        acct_company GetByID(object id);
-        void Update(acct_company acct_company);
-        void Delete(acct_company acct_company);
+        CompanyView GetByID(object id);
+        void Update(CompanyView acct_company);
+        void Delete(int id);
         void Save();
     }
 }

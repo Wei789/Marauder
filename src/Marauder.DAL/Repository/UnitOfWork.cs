@@ -64,7 +64,7 @@ namespace Marauder.DAL.Repository
                     }
                 }
 
-                logger.Debug(outputLines);
+                outputLines.ForEach(i => logger.Debug("{0}", i));
             }
         }
 

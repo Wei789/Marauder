@@ -8,6 +8,6 @@ namespace Marauder.Web.Controllers
 {
     public class BaseController : Controller
     {
-        public int pageSize = 1;
+        public int pageSize = 10;
     }
 }
