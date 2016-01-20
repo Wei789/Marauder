@@ -1,0 +1,15 @@
+<?xml version="1.0"?>
+<doc>
+    <assembly>
+        <name>Marauder.Web</name>
+    </assembly>
+    <members>
+        <member name="M:Marauder.Web.Controllers.ValueController.Get">
+            <summary>
+            RESTful sample get api.
+            </summary>
+            <remarks>RESTful Http method GET</remarks>
+            <returns></returns>
+        </member>
+    </members>
+</doc>
