@@ -6,7 +6,7 @@ using System.Net;
 using System.Net.Http;
 using System.Web.Http;
 
-namespace Marauder.Web.Controllers
+namespace Marauder.Web.Controllers.Api
 {
     public class ValueController : ApiController
     {

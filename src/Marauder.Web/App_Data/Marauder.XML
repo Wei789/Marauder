@@ -4,7 +4,7 @@
         <name>Marauder.Web</name>
     </assembly>
     <members>
-        <member name="M:Marauder.Web.Controllers.ValueController.Get">
+        <member name="M:Marauder.Web.Controllers.Api.ValueController.Get">
             <summary>
             RESTful sample get api.
             </summary>
