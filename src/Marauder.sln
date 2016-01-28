@@ -13,6 +13,8 @@ Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "Marauder.DAL", "Marauder.DA
 EndProject
 Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "Marauder.Help", "Marauder.Help\Marauder.Help.csproj", "{D84FED34-21FF-4B66-A839-391C08447FAA}"
 EndProject
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "Marauder.Task", "Marauder.Task\Marauder.Task.csproj", "{6366468F-E7A9-4A89-82BF-0A748AA87BBB}"
+EndProject
 Global
 	GlobalSection(SolutionConfigurationPlatforms) = preSolution
 		Debug|Any CPU = Debug|Any CPU
@@ -39,6 +41,10 @@ Global
 		{D84FED34-21FF-4B66-A839-391C08447FAA}.Debug|Any CPU.Build.0 = Debug|Any CPU
 		{D84FED34-21FF-4B66-A839-391C08447FAA}.Release|Any CPU.ActiveCfg = Release|Any CPU
 		{D84FED34-21FF-4B66-A839-391C08447FAA}.Release|Any CPU.Build.0 = Release|Any CPU
+		{6366468F-E7A9-4A89-82BF-0A748AA87BBB}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{6366468F-E7A9-4A89-82BF-0A748AA87BBB}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{6366468F-E7A9-4A89-82BF-0A748AA87BBB}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{6366468F-E7A9-4A89-82BF-0A748AA87BBB}.Release|Any CPU.Build.0 = Release|Any CPU
 	EndGlobalSection
 	GlobalSection(SolutionProperties) = preSolution
 		HideSolutionNode = FALSE
