@@ -1,9 +1,14 @@
 ﻿using Marauder.BLL.ViewModels;
+using Marauder.Help;
+using Newtonsoft.Json;
 using System;
 using System.Collections.Generic;
+using System.IO;
 using System.Linq;
 using System.Net;
 using System.Net.Http;
+using System.Net.Http.Headers;
+using System.Text;
 using System.Web.Http;
 
 namespace Marauder.Web.Controllers.Api
@@ -19,11 +24,12 @@ namespace Marauder.Web.Controllers.Api
         {
             return new SampleView() { a = 0, bClass = new SampleBClass() { b = "a" } };
         }
-
+                
         // GET: api/Value/5
-        public string Get(int id)
+        public HttpResponseMessage Get(int id)
         {
-            return "value";
+            SampleView s = new SampleView() { a = 0, bClass = new SampleBClass() { b = "a" } };
+            return KitFile.FileAsAttachment(s, id.ToString(), "text");
         }
 
         // POST: api/Value

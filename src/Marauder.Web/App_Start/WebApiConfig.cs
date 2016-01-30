@@ -20,6 +20,7 @@ namespace Marauder.Web
                 defaults: new { id = RouteParameter.Optional }
             );
 
+            // 預設回傳JSON
             var appXmlType = config.Formatters.XmlFormatter.SupportedMediaTypes.FirstOrDefault(t => t.MediaType == "application/xml");
             config.Formatters.XmlFormatter.SupportedMediaTypes.Remove(appXmlType);
         }
