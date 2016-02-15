@@ -1,5 +1,4 @@
 ﻿using DAL.Repository;
-using Marauder.DAL.Models;
 using NLog;
 using System;
 using System.Collections;
