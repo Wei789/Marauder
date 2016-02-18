@@ -8,7 +8,7 @@ namespace Marauder.DAL.DBContexts
 {
     public class GenericRepository<TEntity> : IRepository<TEntity> where TEntity : class
     {
-        private DBContext context;
+        private DbContext context;
         private DbSet<TEntity> dbSet;
 
         public GenericRepository()
@@ -17,7 +17,7 @@ namespace Marauder.DAL.DBContexts
 
         }
 
-        public GenericRepository(DBContext context)
+        public GenericRepository(DbContext context)
         {
             if (context == null)
             {
