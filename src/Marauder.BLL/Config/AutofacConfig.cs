@@ -3,7 +3,7 @@ using Autofac.Integration.Mvc;
 using DAL.Repository;
 using Marauder.BLL.Interface;
 using Marauder.BLL.Service;
-using Marauder.DAL.Repository;
+using Marauder.DAL.DBContexts;
 using System.Reflection;
 using System.Web.Mvc;
 
@@ -20,10 +20,13 @@ namespace Marauder.BLL
             #region 註冊物件
             //Services
             builder.RegisterType<CompanyService>().As<ICompanyService>();
+            builder.RegisterType<SecondDbContextService>().As<ISecondDbContextService>();
+            
 
             //Unit of work
             //builder.RegisterType<UnitOfWork>().As<IUnitOfWork>();
-            builder.RegisterType<UnitOfWork>().As<IUnitOfWork>().InstancePerLifetimeScope();
+            //builder.RegisterType<UnitOfWork>().As<IUnitOfWork>().InstancePerLifetimeScope();
+            builder.RegisterGeneric(typeof(UnitOfWork<>)).As(typeof(IUnitOfWork<>)).InstancePerLifetimeScope();
             //builder.RegisterType<DBContext>().AsSelf();
             #endregion
 

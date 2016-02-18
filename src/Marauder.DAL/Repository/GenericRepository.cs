@@ -1,11 +1,10 @@
-﻿using Marauder.DAL.Models;
+﻿using Marauder.DAL.DBContexts;
 using System;
-using System.Collections.Generic;
 using System.Data.Entity;
 using System.Linq;
 using System.Linq.Expressions;
 
-namespace Marauder.DAL.Repository
+namespace Marauder.DAL.DBContexts
 {
     public class GenericRepository<TEntity> : IRepository<TEntity> where TEntity : class
     {

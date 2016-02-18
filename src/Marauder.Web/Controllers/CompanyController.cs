@@ -14,12 +14,14 @@ namespace Marauder.Web.Controllers
     public class CompanyController : BaseController
     {
         private readonly ICompanyService comapnyService;
+        private readonly ISecondDbContextService secondDbContextService;
 
         private static Logger logger = NLog.LogManager.GetCurrentClassLogger();
-        
-        public CompanyController(ICompanyService comapnyService)
+
+        public CompanyController(ICompanyService comapnyService, ISecondDbContextService secondDbContextService)
         {
             this.comapnyService = comapnyService;
+            this.secondDbContextService = secondDbContextService;
         }
 
         // GET: Company

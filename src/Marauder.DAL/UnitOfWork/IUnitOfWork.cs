@@ -1,8 +1,8 @@
-﻿using Marauder.DAL.Repository;
-using System;
+﻿using Marauder.DAL.DBContexts;
+using System.Data.Entity;
 namespace DAL.Repository
 {
-    public interface IUnitOfWork
+    public interface IUnitOfWork<TContext> where TContext : DbContext
     {
         void Dispose();
         void Save();

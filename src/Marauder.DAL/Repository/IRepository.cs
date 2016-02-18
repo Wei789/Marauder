@@ -2,7 +2,7 @@
 using System.Linq;
 using System.Linq.Expressions;
 
-namespace Marauder.DAL.Repository
+namespace Marauder.DAL.DBContexts
 {
     public interface IRepository<TEntity> where TEntity : class
     {

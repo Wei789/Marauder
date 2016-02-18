@@ -1,21 +1,19 @@
-﻿using DAL.Repository;
-using Marauder.BLL.Interface;
-using Marauder.DAL.Models;
-using System;
-using System.Collections.Generic;
-using System.Linq;
-using System.Linq.Expressions;
-using AutoMapper;
+﻿using AutoMapper;
 using AutoMapper.QueryableExtensions;
+using DAL.Repository;
+using Marauder.BLL.Interface;
 using Marauder.BLL.ViewModels;
+using Marauder.DAL.DBContexts;
+using Marauder.DAL.Models;
+using System.Linq;
 
 namespace Marauder.BLL.Service
 {
     public class CompanyService : ICompanyService
     {
-        private readonly IUnitOfWork unitOfWork;
+        private readonly IUnitOfWork<DBContext> unitOfWork;
 
-        public CompanyService(IUnitOfWork unitOfWork)
+        public CompanyService(IUnitOfWork<DBContext> unitOfWork)
         {
             this.unitOfWork = unitOfWork;
         }

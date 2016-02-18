@@ -3,25 +3,26 @@ using NLog;
 using System;
 using System.Collections;
 using System.Collections.Generic;
+using System.Data.Entity;
 using System.Data.Entity.Validation;
 
-namespace Marauder.DAL.Repository
+namespace Marauder.DAL.DBContexts
 {
-    public class UnitOfWork : IDisposable, IUnitOfWork
+    public class UnitOfWork<TContext> : IDisposable, IUnitOfWork<TContext> where TContext : DbContext, new()
     {
-        private readonly DBContext context;
+        private readonly DbContext context;
         private bool disposed;
         private Hashtable repositories;
         private static Logger logger = NLog.LogManager.GetCurrentClassLogger();
 
-        public UnitOfWork(DBContext context)
+        public UnitOfWork(DbContext context)
         {
             this.context = context;
         }
 
         public UnitOfWork()
         {
-            this.context = new DBContext();
+            this.context = new TContext();
         }
 
         public IRepository<T> Repository<T>() where T : class

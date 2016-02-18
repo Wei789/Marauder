@@ -1,10 +1,7 @@
-namespace Marauder.DAL.Repository
+namespace Marauder.DAL.DBContexts
 {
-    using System;
-    using System.Data.Entity;
-    using System.ComponentModel.DataAnnotations.Schema;
-    using System.Linq;
     using Marauder.DAL.Models;
+    using System.Data.Entity;
 
     public partial class DBContext : DbContext
     {
