@@ -1,0 +1,56 @@
+﻿<!DOCTYPE html>
+<html>
+<head>
+    <meta charset="utf-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>@ViewBag.Title - 系統管理</title>
+    @Styles.Render("~/Content/css")
+    @RenderSection("style", required: false)
+    @Scripts.Render("~/bundles/modernizr")
+    @Scripts.Render("~/bundles/jquery")
+    @Scripts.Render("~/bundles/bootstrap")
+    @RenderSection("scripts", required: false)
+</head>
+<body>
+    <div class="navbar navbar-default navbar-fixed-top">
+        <div class="container">
+            <div class="navbar-header">
+                <button type="button" class="navbar-toggle" data-toggle="collapse" data-target=".navbar-collapse">
+                    <span class="icon-bar"></span>
+                    <span class="icon-bar"></span>
+                    <span class="icon-bar"></span>
+                </button>
+                @Html.ActionLink("CowCow 系統管理", "Index", "administrator", new { area = "Control" }, new { @class = "navbar-brand" })
+            </div>
+            <div class="navbar-collapse collapse">
+                <ul class="nav navbar-nav">
+                    <li><a><span class="glyphicon glyphicon-user"></span> 用戶管理</a></li>
+                    <li><a href="@Url.Action("Index", "administrator")"><span class='glyphicon glyphicon-lock'></span> 管理員</a></li>
+                    <li><a><span class="glyphicon glyphicon-list"></span> 欄目設置</a></li>
+                    <li><a><span class="glyphicon glyphicon-cog"></span> 網站設定</a></li>
+                </ul>
+                <ul class="nav navbar-nav navbar-right">
+                    <li>
+                        <a href="@Url.Action("MyInfo", "Administrator")"><span class="glyphicon glyphicon-envelope"></span> @Context.Session["Account"].ToString()</a>
+
+                    </li>
+                    <li>
+                        <a href="@Url.Action("Logout", "Administrator")"><span class="glyphicon glyphicon-log-out"></span> 退出</a>
+                    </li>
+                </ul>
+            </div>
+        </div>
+    </div>
+
+    <div class="container body-content">
+        <div class="row">
+            <div class="col-lg-3 col-md-3 col-sm-4">@RenderSection("SideNav", false)</div>
+            <div class="col-lg-9 col-md-9 col-sm-8">@RenderBody()</div>
+        </div>
+        <hr />
+        <footer class="navbar navbar-fixed-bottom text-center bg-primary ">
+            <p>&copy; CowCow v0.1 BASE BY Tay https://github.com/Wei789 </p>
+        </footer>
+    </div>
+</body>
+</html>

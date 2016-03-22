@@ -13,9 +13,7 @@ namespace Marauder.DAL.Repository
         {
         }
 
-        public virtual DbSet<acct_company> acct_company { get; set; }
-        public virtual DbSet<sys_lang_key> sys_lang_key { get; set; }
-        public virtual DbSet<sys_setting> sys_setting { get; set; }
+        public virtual DbSet<Administrator> administrator { get; set; }
 
         protected override void OnModelCreating(DbModelBuilder modelBuilder)
         {

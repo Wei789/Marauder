@@ -1,0 +1,150 @@
+﻿@{
+    ViewBag.Title = "管理員";
+}
+
+@section SideNav{@Html.Partial("SideNavPartialView")}
+<hr />
+<ol class="breadcrumb">
+    <li><span class="glyphicon glyphicon-home"></span>  @Html.ActionLink("首頁", "Index", "Administrator")</li>
+    <li class="active">@Html.ActionLink("管理員", "Index", "Administrator")</li>
+</ol>
+
+<div id="toolbar" class="btn-group" role="group">
+    <button id="btn_add" class="btn btn-default"><span class="glyphicon glyphicon-plus"></span> 添加</button>
+    <button id="btn_del" class="btn btn-default"><span class="glyphicon glyphicon-remove"></span> 删除</button>
+</div>
+<table id="admingrid"></table>
+
+
+
+@section style{
+    @Styles.Render("~/Content/bootstrapplugincss")
+}
+
+@section scripts{
+    @Scripts.Render("~/bundles/jqueryval")
+    @Scripts.Render("~/bundles/bootstrapplugin")
+
+    <script type="text/javascript">
+
+        //重置密碼
+        function ResetPassword(id, accounts) {
+            BootstrapDialog.confirm("確認重置" + accounts + "的密碼", function (result) {
+                if (result) {
+                    $.post("@Url.Action("ResetPassword", "Administrator")", { id: id }, function (data) {
+                        BootstrapDialog.alert(data.Message);
+                    }, "json");
+                }
+            });
+        };
+        //重置密碼结束
+
+        $(document).ready(function () {
+
+            //表格
+            var $table = $('#admingrid');
+            $table.bootstrapTable({
+                toolbar: '#toolbar',
+                showRefresh: true,
+                showColumns: true,
+                showFooter: true,
+                method: 'post',
+                url: '@Url.Action("ListJson")',
+                columns: [
+                    { title: "state", checkbox: true },
+                    { title: 'ID', field: 'AdministratorID' },
+                    { title: "帳號", field: 'Account' },
+                    { title: "操作", field: "AdministratorID", formatter: function (value, row, index) { return "<a href=\"javascript:void(0)\" onclick=\"ResetPassword(" + value + ",'" + row.Account + "')\">重置密碼<a>" } }
+                ]
+            });
+
+            //表格结束
+
+            //工具栏
+            //添加按钮
+            $("#btn_add").click(function () {
+                var addDialog = new BootstrapDialog({
+                    title: "<span class='glyphicon glyphicon-plus'></span>新增管理員",
+                    message: function (dialog) {
+                        var $message = $('<div></div>');
+                        var pageToLoad = dialog.getData('pageToLoad');
+                        $message.load(pageToLoad);
+
+                        return $message;
+                    },
+                    data: {
+                        'pageToLoad': '@Url.Action("AddPartialView")'
+                    },
+                    buttons: [{
+                        icon: "glyphicon glyphicon-plus",
+                        label: "新增",
+                        action: function (dialogItself) {
+                            $.post($("form").attr("action"), $("form").serializeArray(), function (data) {
+                                if (data.Code == 1) {
+                                    BootstrapDialog.show({
+                                        message: data.Message,
+                                        buttons: [{
+                                            icon: "glyphicon glyphicon-ok",
+                                            label: "確定",
+                                            action: function (dialogItself) {
+                                                $table.bootstrapTable("refresh");
+                                                dialogItself.close();
+                                                addDialog.close();
+                                            }
+                                        }]
+
+                                    });
+                                }
+                                else BootstrapDialog.alert(data.Message);
+                            }, "json");
+                            $("form").validate();
+                        }
+                    }, {
+                        icon: "glyphicon glyphicon-remove",
+                        label: "關閉",
+                        action: function (dialogItself) {
+                            dialogItself.close();
+                        }
+                    }]
+                });
+                addDialog.open();
+            });
+            //添加按钮结束
+
+            //删除按钮
+            $("#btn_del").click(function () {
+                var selected = $table.bootstrapTable('getSelections');
+                if ($(selected).length > 0) {
+                    BootstrapDialog.confirm("確定刪除選中" + $(selected).length + "位管理员", function (result) {
+                        if (result) {
+                            var ids = new Array($(selected).length);
+                            $.each(selected, function (index, value) {
+                                ids[index] = value.AdministratorID;
+                            });
+                            $.post("@Url.Action("DeleteJson","Administrator")", { ids: ids }, function (data) {
+                                if (data.Code != 0) {
+                                    BootstrapDialog.show({
+                                        message: data.Message,
+                                        buttons: [{
+                                            icon: "glyphicon glyphicon-ok",
+                                            label: "確定",
+                                            action: function (dialogItself) {
+                                                $table.bootstrapTable("refresh");
+                                                dialogItself.close();
+                                            }
+                                        }]
+
+                                    });
+                                }
+                                else BootstrapDialog.alert(data.Message);
+
+                            }, "json");
+                        }
+                    });
+                }
+                else BootstrapDialog.warning("請選擇要刪除的行");
+            });
+            //删除按钮结束
+        });
+</script>
+}

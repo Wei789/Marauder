@@ -43,11 +43,15 @@ namespace Marauder.DAL.Repository
             return (IRepository<T>)repositories[type];
         }
 
-        public void Save()
+        /// <summary>
+        /// false: 失敗; true: 成功
+        /// </summary>
+        public bool Save()
         {
             try
             {
                 context.SaveChanges();
+                return true;
             }
             catch (DbEntityValidationException e)
             {
@@ -64,6 +68,7 @@ namespace Marauder.DAL.Repository
                 }
 
                 outputLines.ForEach(i => logger.Debug("{0}", i));
+                return false;
             }
         }
 

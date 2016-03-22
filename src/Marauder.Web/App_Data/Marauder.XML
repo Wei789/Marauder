@@ -4,6 +4,53 @@
         <name>Marauder.Web</name>
     </assembly>
     <members>
+        <member name="M:Marauder.Web.Areas.Config.AdminAuthorizeAttribute.AuthorizeCore(System.Web.HttpContextBase)">
+            <summary>
+            檢查用戶是否登入 登入:ture ;沒登入:false
+            </summary>
+            <param name="httpContext"></param>
+            <returns></returns>
+        </member>
+        <member name="M:Marauder.Web.Areas.Config.AdminAuthorizeAttribute.HandleUnauthorizedRequest(System.Web.Mvc.AuthorizationContext)">
+            <summary>
+            該方法為驗證失敗時才會執行，回到管理員登入介面
+            </summary>
+            <param name="filterContext"></param>
+        </member>
+        <member name="M:Marauder.Web.Areas.Config.Controllers.AdministratorController.AddPartialView">
+            <summary>
+            添加【分部视图】
+            </summary>
+            <returns></returns>
+        </member>
+        <member name="M:Marauder.Web.Areas.Config.Controllers.AdministratorController.AddJson(Marauder.BLL.ViewModels.AdministratorManager)">
+            <summary>
+            添加【Json】
+            </summary>
+            <param name="addAdmin"></param>
+            <returns></returns>
+        </member>
+        <member name="M:Marauder.Web.Areas.Config.Controllers.AdministratorController.DeleteJson(System.Collections.Generic.List{System.Int32})">
+            <summary>
+            删除 
+            Response.Code:1-成功，2-部分删除，0-失败
+            Response.Data:刪除數量
+            </summary>
+            <returns></returns>
+        </member>
+        <member name="M:Marauder.Web.Areas.Config.Controllers.AdministratorController.ResetPassword(System.Int32)">
+            <summary>
+            重設密碼
+            </summary>
+            <param name="id">管理員ID</param>
+            <returns></returns>
+        </member>
+        <member name="M:Marauder.Web.Areas.Config.Controllers.AdministratorController.MyInfo">
+            <summary>
+            管理員資料
+            </summary>
+            <returns></returns>
+        </member>
         <member name="M:Marauder.Web.Controllers.Api.ValueController.Get">
             <summary>
             RESTful sample get api.

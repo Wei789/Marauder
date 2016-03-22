@@ -19,7 +19,7 @@ namespace Marauder.BLL
 
             #region 註冊物件
             //Services
-            builder.RegisterType<CompanyService>().As<ICompanyService>();
+            builder.RegisterType<AdminstratorService>().As<IAdminstratorService>();
 
             //Unit of work
             //builder.RegisterType<UnitOfWork>().As<IUnitOfWork>();
