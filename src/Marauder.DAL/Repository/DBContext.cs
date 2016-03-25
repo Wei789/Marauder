@@ -13,12 +13,11 @@ namespace Marauder.DAL.Repository
         {
         }
 
-        public virtual DbSet<acct_company> acct_company { get; set; }
-        public virtual DbSet<sys_lang_key> sys_lang_key { get; set; }
-        public virtual DbSet<sys_setting> sys_setting { get; set; }
-
-        protected override void OnModelCreating(DbModelBuilder modelBuilder)
-        {
-        }
+        public virtual DbSet<Artist> Artists { get; set; }
+        public virtual DbSet<Album> Albums { get; set; }
+        public virtual DbSet<Genre> Genres { get; set; }
+        public DbSet<Cart> Carts { get; set; }
+        public DbSet<Order> Orders { get; set; }
+        public DbSet<OrderDetail> OrderDetails { get; set; }
     }
 }

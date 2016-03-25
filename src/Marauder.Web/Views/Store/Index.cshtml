@@ -1,0 +1,20 @@
+﻿@model IEnumerable<Marauder.BLL.ViewModels.GenreViewModel>
+
+@{
+    ViewBag.Title = "Store";
+}
+<h3>Browse Genres</h3>
+<p>
+    Select from @Model.Count() genres:
+</p>
+<ul>
+    @foreach (var genre in Model)
+    {
+        @*<li><a href="/Store/Browse?genre=@genre.Name">@genre.Name</a></li>*@
+        @*no hardcode because if we haved to change the controller name, we have to search all code  *@
+        <li>
+            @Html.ActionLink(@genre.Name, "Browse", new { genre = genre.Name })
+        </li>
+    }
+</ul>
+@Html.ActionLink("Go to the Store Index", "Index")

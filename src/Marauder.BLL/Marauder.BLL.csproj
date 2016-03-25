@@ -49,6 +49,7 @@
     <Reference Include="System" />
     <Reference Include="System.ComponentModel.DataAnnotations" />
     <Reference Include="System.Core" />
+    <Reference Include="System.Web" />
     <Reference Include="System.Web.Helpers, Version=3.0.0.0, Culture=neutral, PublicKeyToken=31bf3856ad364e35, processorArchitecture=MSIL">
       <HintPath>..\packages\Microsoft.AspNet.WebPages.3.1.0\lib\net45\System.Web.Helpers.dll</HintPath>
       <Private>True</Private>
@@ -82,11 +83,23 @@
   <ItemGroup>
     <Compile Include="Config\AutofacConfig.cs" />
     <Compile Include="Config\AutoMapperConfig.cs" />
-    <Compile Include="Interface\ICompanyService.cs" />
+    <Compile Include="Interface\IAlbumService.cs" />
+    <Compile Include="Interface\IArtistService.cs" />
+    <Compile Include="Interface\IGenreService.cs" />
+    <Compile Include="Interface\IShoppingCartService.cs" />
     <Compile Include="Properties\AssemblyInfo.cs" />
+    <Compile Include="Service\AlbumService.cs" />
+    <Compile Include="Service\ArtistService.cs" />
     <Compile Include="Service\CompanyService.cs" />
-    <Compile Include="ViewModels\CompanyView.cs" />
+    <Compile Include="Service\GenreService.cs" />
+    <Compile Include="Service\ShoppingCartService.cs" />
+    <Compile Include="ViewModels\AlbumViewModel.cs" />
+    <Compile Include="ViewModels\ArtistViewModel.cs" />
+    <Compile Include="ViewModels\CartViewModel.cs" />
+    <Compile Include="ViewModels\GenreViewModel.cs" />
     <Compile Include="ViewModels\SampleView.cs" />
+    <Compile Include="ViewModels\ShoppingCartRemoveViewModel.cs" />
+    <Compile Include="ViewModels\ShoppingCartViewModel.cs" />
   </ItemGroup>
   <ItemGroup>
     <ProjectReference Include="..\Marauder.DAL\Marauder.DAL.csproj">

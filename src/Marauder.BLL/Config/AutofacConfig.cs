@@ -19,7 +19,10 @@ namespace Marauder.BLL
 
             #region 註冊物件
             //Services
-            builder.RegisterType<CompanyService>().As<ICompanyService>();
+            builder.RegisterType<GenreService>().As<IGenreService>();
+            builder.RegisterType<AlbumService>().As<IAlbumService>();
+            builder.RegisterType<ArtistService>().As<IArtistService>();
+            builder.RegisterType<ShoppingCartService>().As<IShoppingCartService>();
 
             //Unit of work
             //builder.RegisterType<UnitOfWork>().As<IUnitOfWork>();

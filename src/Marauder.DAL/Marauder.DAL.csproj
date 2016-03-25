@@ -54,14 +54,35 @@
     <Reference Include="System.Xml" />
   </ItemGroup>
   <ItemGroup>
+    <Compile Include="Migrations\201603230432459_Initial.cs" />
+    <Compile Include="Migrations\201603230432459_Initial.Designer.cs">
+      <DependentUpon>201603230432459_Initial.cs</DependentUpon>
+    </Compile>
+    <Compile Include="Migrations\201603240813223_addAlbumValidation.cs" />
+    <Compile Include="Migrations\201603240813223_addAlbumValidation.Designer.cs">
+      <DependentUpon>201603240813223_addAlbumValidation.cs</DependentUpon>
+    </Compile>
+    <Compile Include="Migrations\201603250901003_addCart.cs" />
+    <Compile Include="Migrations\201603250901003_addCart.Designer.cs">
+      <DependentUpon>201603250901003_addCart.cs</DependentUpon>
+    </Compile>
+    <Compile Include="Migrations\201603251015145_addCartPrimarykey.cs" />
+    <Compile Include="Migrations\201603251015145_addCartPrimarykey.Designer.cs">
+      <DependentUpon>201603251015145_addCartPrimarykey.cs</DependentUpon>
+    </Compile>
+    <Compile Include="Migrations\Configuration.cs" />
+    <Compile Include="Models\Album.cs" />
+    <Compile Include="Models\Artist.cs" />
+    <Compile Include="Models\Cart.cs" />
+    <Compile Include="Models\Genre.cs" />
+    <Compile Include="Models\Order.cs" />
+    <Compile Include="Models\OrderDetail.cs" />
+    <Compile Include="Models\SampleData.cs" />
     <Compile Include="Properties\AssemblyInfo.cs" />
-    <Compile Include="Models\acct_company.cs" />
     <Compile Include="Repository\DBContext.cs" />
     <Compile Include="Repository\GenericRepository.cs" />
     <Compile Include="Repository\Interface\IRepository.cs" />
     <Compile Include="Repository\Interface\IUnitOfWork.cs" />
-    <Compile Include="Models\sys_lang_key.cs" />
-    <Compile Include="Models\sys_setting.cs" />
     <Compile Include="Repository\UnitOfWork.cs" />
   </ItemGroup>
   <ItemGroup>
@@ -74,7 +95,20 @@
     </None>
     <None Include="packages.config" />
   </ItemGroup>
-  <ItemGroup />
+  <ItemGroup>
+    <EmbeddedResource Include="Migrations\201603230432459_Initial.resx">
+      <DependentUpon>201603230432459_Initial.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Migrations\201603240813223_addAlbumValidation.resx">
+      <DependentUpon>201603240813223_addAlbumValidation.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Migrations\201603250901003_addCart.resx">
+      <DependentUpon>201603250901003_addCart.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Migrations\201603251015145_addCartPrimarykey.resx">
+      <DependentUpon>201603251015145_addCartPrimarykey.cs</DependentUpon>
+    </EmbeddedResource>
+  </ItemGroup>
   <Import Project="$(MSBuildToolsPath)\Microsoft.CSharp.targets" />
   <!-- To modify your build process, add your task inside one of the targets below and uncomment it. 
        Other similar extension points exist, see Microsoft.Common.targets.
