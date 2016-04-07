@@ -120,7 +120,7 @@ namespace Marauder.Web.Controllers
                 return View();
             }
         }
-
+        
         private void PrepareDropdownList(AlbumViewModel album = null)
         {
             var GenreList = this.genreService.GetAll();

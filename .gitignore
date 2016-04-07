@@ -74,4 +74,3 @@ _[Ss]cripts
 *.nupkg
 *.ncrunchsolution
 *.dot[Cc]over
-src/Marauder.Web/Web.config
