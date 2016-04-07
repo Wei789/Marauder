@@ -3,7 +3,7 @@
 @{
     ViewBag.Title = "Shopping Cart";
 }
-<script type="text/javascript">
+<script>
     $(function () {
         // Document.ready -> link up remove event handler
         $(".RemoveLink").click(function () {
@@ -25,6 +25,7 @@
                         $('#cart-status').text('Cart (' + data.CartCount + ')');
                     });
             }
+            //alert("視窗內文字");
         });
     });
 </script>
