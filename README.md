@@ -12,7 +12,7 @@ Project structure
 Presentation layer     - UI,bussiness flow  
 Business logic layer  - business logic  
 Data access layer  - Stored and retrieved from a database or file system  
-Task  -  Windows service
+Task  -  Windows service  
 Help - Common library  
 Tests - Unit test
 
